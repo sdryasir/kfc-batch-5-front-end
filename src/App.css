@@ -1,38 +1,57 @@
-.App {
-  text-align: center;
+.top-header-wrapper{
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+.top-header-wrapper img{
+    width: 150px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.top-header-wrapper ul{
+    display: flex;
+}
+.top-header-wrapper ul li{
+    list-style-type: none;
+    margin: 8px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.top-header-wrapper ul li a{
+    text-transform: uppercase;
+    font-weight: bolder;
+    text-decoration: none;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.upper-footer{
+    display: flex;
+    justify-content: center;
 }
 
-.App-link {
-  color: #61dafb;
+.lower-footer{
+    display: flex;
+    justify-content: space-around;
+}
+.lower-footer ul li h5 {
+    font-size: 16px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.lower-footer ul li {
+    list-style-type: none;
+    margin: 8px 0;
+}
+.lower-footer ul li a {
+    text-decoration: none;
+    color: rgb(56, 56, 56);
+}
+
+.lower-footer ul li a:hover {
+    text-decoration:underline;
+}
+
+.lower-footer ul li a img {
+    width: 200px;
+}
+
+.nav-item .nav-link{
+    text-transform: uppercase;
+    font-weight: bold;
 }
