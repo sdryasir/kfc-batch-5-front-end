@@ -15,6 +15,7 @@ import {
   useParams
 } from "react-router-dom";
 import Products from './pages/Products';
+import Detail from './pages/Detail';
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
           <Route exact path="/location" component={Location} />
           <Route exact path="/contact" component={Contact} />
           <Route exact path="/collection/:category" component={Products} />
+          <Route exact path="/product/:prod" component={Detail} />
         </Switch>
         <Footer />
       </Router>
