@@ -2,10 +2,16 @@ import React from 'react'
 import footerLogo from '../assets/footer-logo.png'
 import googlePlay from '../assets/google-play.png'
 import appStore from '../assets/app-store.png'
+import { useSelector } from 'react-redux';
 
 const Footer = () => {
+
+    const counter = useSelector(state => state.counter)
+
     return (
         <div className="footer mt-4">
+            <hr />
+            <p>{counter}</p>
             <div className="upper-footer mb-4">
                 <img src={footerLogo} alt="" />
             </div>

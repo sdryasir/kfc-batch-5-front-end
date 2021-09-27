@@ -4,11 +4,6 @@ import { Link } from 'react-router-dom'
 
 const Card = (props) => {
 
-    // const a = 90
-    // //console.log("Hello " + a)
-
-    // console.log(`Hello ${a}`)
-
     return (
         <div className="col-md-4 mb-4">
             <div className="card">

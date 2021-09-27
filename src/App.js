@@ -6,6 +6,7 @@ import Home from './pages/Home'
 import Login from './pages/Login'
 import Location from './pages/Location'
 import Contact from './pages/Contact';
+import { useState } from 'react'
 
 import {
   BrowserRouter as Router,
@@ -16,8 +17,10 @@ import {
 } from "react-router-dom";
 import Products from './pages/Products';
 import Detail from './pages/Detail';
+import Register from './pages/Register';
 
 function App() {
+
   return (
     <div className="container">
       <Router>
@@ -28,7 +31,10 @@ function App() {
           <Route exact path="/location" component={Location} />
           <Route exact path="/contact" component={Contact} />
           <Route exact path="/collection/:category" component={Products} />
-          <Route exact path="/product/:prod" component={Detail} />
+          <Route exact path="/product/:prod">
+            <Detail />
+          </Route>
+          <Route exact path="/register" component={Register} />
         </Switch>
         <Footer />
       </Router>
