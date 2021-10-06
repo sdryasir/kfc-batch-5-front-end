@@ -18,6 +18,7 @@ import {
 import Products from './pages/Products';
 import Detail from './pages/Detail';
 import Register from './pages/Register';
+import Countries from './pages/Countries';
 
 function App() {
 
@@ -35,6 +36,7 @@ function App() {
             <Detail />
           </Route>
           <Route exact path="/register" component={Register} />
+          <Route exact path="/countries" component={Countries} />
         </Switch>
         <Footer />
       </Router>

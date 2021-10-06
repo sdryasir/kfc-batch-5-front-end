@@ -10,7 +10,7 @@ const Home = () => {
             <Slider />
             <div className="row mt-5">
                 {
-                    products.map((product) => <Card data={product} />)
+                    products.map((product) => <Card key={product.id} data={product} />)
                 }
             </div>
         </>
