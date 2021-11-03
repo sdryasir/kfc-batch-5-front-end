@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import axios from 'axios'
 
 const Countries = () => {
 
@@ -9,16 +10,11 @@ const Countries = () => {
     useEffect(() => {
         try {
             setLoading(true)
-
-            const countriesResult = fetch('https://restcountries.com/v3.1/all')
-
-            countriesResult
-                .then(response => response.json())
-                .then(data => {
-                    setLoading(false)
-                    setCountries(data)
-                })
-
+            const countriesResult = axios.get('https://restcountries.com/v3.1/all')
+            countriesResult.then(res => {
+                setLoading(false)
+                setCountries(res.data)
+            })
         } catch (error) {
             console.log(error)
         }
@@ -31,9 +27,9 @@ const Countries = () => {
             <div className="row">
 
                 {
-                    loading ? <div class="text-center">
-                        <div class="spinner-border" role="status">
-                            <span class="visually-hidden">Loading...</span>
+                    loading ? <div className="text-center">
+                        <div className="spinner-border" role="status">
+                            <span className="visually-hidden">Loading...</span>
                         </div>
                     </div> :
                         countries.map((country) => <div key={country.name.official} className="col-md-3 mt-3">

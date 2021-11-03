@@ -1,10 +1,27 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import Card from '../components/Card'
 import Slider from '../components/Slider'
+import axios from 'axios'
 
-import { products } from '../data/products'
 
 const Home = () => {
+
+    const [products, setProducts] = useState([])
+
+    const [loading, setLoading] = useState(false)
+    useEffect(() => {
+        try {
+            setLoading(true)
+            const productsResult = axios.get('http://localhost:3000/products')
+            productsResult.then(res => {
+                setLoading(false)
+                setProducts(res.data)
+            })
+        } catch (error) {
+            console.log(error)
+        }
+    }, [])
+
     return (
         <>
             <Slider />

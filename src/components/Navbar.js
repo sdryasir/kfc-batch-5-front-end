@@ -35,6 +35,9 @@ const Navbar = () => {
                             <li className="nav-item">
                                 <Link className="nav-link active" aria-current="page" to="/collection/midnight-deals">MIDNIGHT DEALS</Link>
                             </li>
+                            <li className="nav-item">
+                                <Link className="nav-link active bg-danger text-white" aria-current="page" to="/add-product">Add Product</Link>
+                            </li>
                         </ul>
 
                         <ul className="navbar-nav ms-auto mb-2 mb-lg-0">

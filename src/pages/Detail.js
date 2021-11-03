@@ -1,16 +1,27 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import p1 from '../assets/p1.png'
 import { useParams } from 'react-router-dom'
-import { products } from '../data/products';
 import Overlay from '../components/Overlay';
 import { useSelector, useDispatch } from 'react-redux';
-
+import axios from 'axios'
 
 const Detail = () => {
 
-    const { prod } = useParams();
+    const { id } = useParams();
+    const [product, setProduct] = useState({})
 
-    const product = products.find(item => item.slug === prod)
+    const [loading, setLoading] = useState(false)
+    useEffect(() => {
+        try {
+            setLoading(true)
+            axios.get(`http://localhost:3000/products/${id}`).then(res => {
+                setLoading(false)
+                setProduct(res.data)
+            })
+        } catch (error) {
+            console.log(error)
+        }
+    }, [])
 
     const [quantity, setQuantity] = useState(1)
 

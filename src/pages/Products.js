@@ -1,9 +1,26 @@
-
+import React, { useState, useEffect } from 'react'
 import { useParams } from "react-router-dom";
-import { products } from '../data/products';
 import Card from '../components/Card';
+import axios from 'axios'
 
 const Products = () => {
+
+    const [products, setProducts] = useState([])
+
+    const [loading, setLoading] = useState(false)
+    useEffect(() => {
+        try {
+            setLoading(true)
+            const productsResult = axios.get('http://localhost:3000/products')
+            productsResult.then(res => {
+                setLoading(false)
+                setProducts(res.data)
+            })
+        } catch (error) {
+            console.log(error)
+        }
+    }, [])
+
     const { category } = useParams();
 
     const prods = products.filter(product => product.category === category)
